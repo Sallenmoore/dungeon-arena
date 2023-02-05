@@ -1,0 +1,57 @@
+# PRODUCTION
+
+## Framework
+
+Flask  
+
+## Configuration and Documentation
+
+
+## API
+
+flask-restful
+#jsonpickle
+#marshmallow
+
+## Database
+
+#tinydb
+firebase-admin
+
+## Frontend
+
+libsass
+Flask-WTF
+
+## Network
+
+requests
+gunicorn
+
+## Security
+
+
+## AI
+
+#openai
+#replicate
+
+## Parsing
+
+dateparser
+parse
+
+# DEVELOPMENT
+
+## Linting
+
+black
+pytest-flakes
+
+## Debugging
+flask_debug
+
+## Testing
+
+pytest
+coverage

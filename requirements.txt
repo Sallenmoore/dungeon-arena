@@ -31,9 +31,15 @@ gunicorn
 ## Security
 
 
+## Async
+
+aiofiles
+aiohttp
+aiopath
+
 ## AI
 
-#openai
+openai
 #replicate
 
 ## Parsing

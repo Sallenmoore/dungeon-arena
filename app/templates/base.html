@@ -22,14 +22,17 @@
     </head>
 
     <body>
-        <div class="nav">
-            {% include "nav.html"%}
-        </div>
-        <div class="container">
-            {% block content %}{% endblock %}
+        <div class="row" id="background">
+            <div class="col s12">
+                {% include "nav.html"%}
+                <div class="container">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
         </div>
         <!-- JavaScript Libs -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://code.iconify.design/iconify-icon/1.0.3/iconify-icon.min.js"></script>
         <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     </body>
 

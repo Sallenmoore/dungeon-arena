@@ -1,7 +1,7 @@
 
 all: test clean run start
 
-APP_NAME?=app
+APP_NAME?=dungeon
 CONTAINERS=$(sudo docker ps -a -q)
 
 build:

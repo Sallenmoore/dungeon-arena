@@ -2,23 +2,77 @@
 
 {% block content %}
 <div class="row">
-  <div class="col s6 deep-purple">
-    <div class="row">
-      <div class="col s6 deep-purple accent-1">
-      </div>
-      <div class="col s6 deep-purple accent-4">
-      </div>
-    </div>
+  <div class="col s2 white">
+    <h>Monster Generator</h1>
+      <form action="/" method="post">
+        <div class="row">
+          <div class="col s12">
+            <button class="btn red darken-4" type="submit">
+              <i class="material-icons">replay</i>
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <select id="number" name="number">
+              {% for i in range(1, 11) %}
+              <option value="{{i}}" {% if number==i %} selected {% endif %}>
+                {{i}}
+              </option>
+              {% endfor %}
+            </select>
+            <label>How many opponents?</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <select id="crmin" name="crmin">
+              {% for i in range(21) %}
+              <option value="{{i}}" {% if i==1 %} selected {% endif %}>
+                {{i}}
+              </option>
+              {% endfor %}
+            </select>
+            <label>Min CR</label>
+          </div>
+          <div class="input-field col s6">
+            <select id="crmax" name="crmax">
+              {% for i in range(21) %}
+              <option value="{{i}}" {% if i==20 %} selected {% endif %}>
+                {{i}}
+              </option>
+              {% endfor %}
+            </select>
+            <label>Max CR</label>
+          </div>
+        </div>
+      </form>
   </div>
-  <div class="col s6 yellow">
+  <div class="col s10">
     <div class="row">
-      <div class="col s6 yellow accent-1">
+      {% for mob in monsters %}
+      <div class="col s3 amber lighten-5">
+        <section>
+          <div class="card">
+            <div class="card-image">
+              <img src="{{mob['image']}}">
+              <span class="card-title">{{mob['name']}} [CR: {{mob['challenge_rating']}}]</span>
+              <a class="btn btn-floating halfway-fab waves-effect waves-light red">
+                <i class="material-icons">call_to_action</i>
+              </a>
+            </div>
+            <div class="card-content">
+              <ul>
+                <li>HP: {{mob['hit_points']}}</li>
+                <li>AC: {{mob['armor_class']}}</li>
+                <li>Size: {{mob['size']}}</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
-      <div class="col s6 yellow accent-4">
-      </div>
+      {% endfor %}
     </div>
   </div>
 </div>
-</div>
-
 {% endblock %}

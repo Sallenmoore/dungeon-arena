@@ -55,8 +55,8 @@ class OpenDnD:
         return results
 
     @classmethod
-    def has_image(cls, name):
-        return os.path.isfile(f"static/images/mobs/{name}-1.jpg")
+    def has_image(cls, fname):
+        return os.path.isfile(f"{fname}-1.png")
 
     @classmethod
     def get_image(cls, name, description="preparing for battle"):
@@ -66,9 +66,9 @@ class OpenDnD:
         Returns:
             _type_: _description_
         """
-        if not cls.has_image(name):
-            prompt = f"A Photorealistic image of a {name} from Dungeons and Dragons 5E in an arena setting {description}"
-            OpenAI().generate_image(
-                prompt, path=f"static/images/mobs/{name.replace(' ', '')}", n=NUM_IMAGES
-            )
-        return f"/static/images/mobs/{name.replace(' ', '')}-{random.randint(1,NUM_IMAGES)}.png"
+        img_file = f"static/images/mobs/{name.replace(' ', '')}"
+        if not cls.has_image(img_file):
+            log(img_file)
+            prompt = f"A Photo-Realistic portrait of a {name} from Dungeons and Dragons Fifth Edition in a battle arena setting {description}"
+            OpenAI().generate_image(prompt, path=f"{img_file}", n=NUM_IMAGES)
+        return f"{img_file}-{random.randint(1,NUM_IMAGES)}.png"

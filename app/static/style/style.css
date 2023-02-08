@@ -19,6 +19,8 @@ body{
 #background{
     height: 100%;
     width: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
     background-color: rgba(175, 175, 175, 0.5);
 }
 
@@ -38,15 +40,11 @@ body{
     min-width:280px;
     background: #FDF1DC;
     padding: 5px 10px 20px;
-    box-shadow: 0 0 1.5em #867453;
     text-align: center;
     border-top: 1px solid #000;
 }
-.stat-block.wide .section-left,
-.stat-block.wide .section-right{
-    display: inline-block;
+.card_attributes,.card_actions{
     vertical-align: top;
-    width: 48%;
     text-align: left;
 }
 .orange-border{

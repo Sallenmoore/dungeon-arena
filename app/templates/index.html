@@ -10,10 +10,12 @@
         <div class="card amber lighten-5">
           <div class="card-image">
             <img src="{{mob['image']}}">
-            <span class="card-title red darken-4">{{mob['name']}} [CR: {{mob['challenge_rating']}}]</span>
+            <span class="card-title red darken-4" style="width:70%;font-size:1rem;">
+              {{mob['name']}} (CR:{{mob['challenge_rating']}})
+            </span>
             <a class="btn btn-floating halfway-fab waves-effect waves-light red modal-trigger"
               href="#modal{{loop.index}}">
-              <i class="material-icons">call_to_action</i>
+              <i class="material-icons">credit_card</i>
             </a>
           </div>
           <div class="card-content">

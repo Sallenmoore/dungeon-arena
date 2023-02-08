@@ -23,11 +23,11 @@
 
     <body>
         <div class="row" id="background">
-            <div class="col s12">
+            <div class="col s6">
                 {% include "nav.html"%}
-                <div class="container">
-                    {% block content %}{% endblock %}
-                </div>
+            </div>
+            <div class="col s6">
+                {% block content %}{% endblock %}
             </div>
         </div>
         <!-- JavaScript Libs -->

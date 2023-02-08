@@ -15,7 +15,7 @@
           <div class="input-field col s3">
             <select id="number" name="number">
               {% for i in range(1, 11) %}
-              <option value="{{i}}" {% if number==i %} selected {% endif %}>
+              <option value="{{i}}" {% if session['number']==i|string() %} selected {% endif %}>
                 {{i}}
               </option>
               {% endfor %}
@@ -25,7 +25,7 @@
           <div class="input-field col s3">
             <select id="crmin" name="crmin">
               {% for i in range(21) %}
-              <option value="{{i}}" {% if i==1 %} selected {% endif %}>
+              <option value="{{i}}" {% if session['crmin']==i|string() %} selected {% endif %}>
                 {{i}}
               </option>
               {% endfor %}
@@ -34,8 +34,8 @@
           </div>
           <div class="input-field col s3">
             <select id="crmax" name="crmax">
-              {% for i in range(21) %}
-              <option value="{{i}}" {% if i==20 %} selected {% endif %}>
+              {% for i in range(20, 0, -1) %}
+              <option value="{{i}}" {% if session['crmax']==i|string() %} selected {% endif %}>
                 {{i}}
               </option>
               {% endfor %}
@@ -50,26 +50,33 @@
 <div class="row">
   <div class="col s12">
     <div class="row">
-      {% for mob in monsters %}
-      <div class="col s4 amber lighten-5">
-        <section>
-          <div class="card">
-            <div class="card-image">
-              <img src="{{mob['image']}}">
-              <span class="card-title red darken-4">{{mob['name']}} [CR: {{mob['challenge_rating']}}]</span>
-              <a class="btn btn-floating halfway-fab waves-effect waves-light red ">
-                <i class="material-icons">call_to_action</i>
-              </a>
-            </div>
-            <div class="card-content">
-              <ul>
-                <li>HP: {{mob['hit_points']}}</li>
-                <li>AC: {{mob['armor_class']}}</li>
-                <li>Size: {{mob['size']}}</li>
-              </ul>
-            </div>
+      {% for mob in session['monsters'] %}
+      <div class="col s4">
+        <div class="card amber lighten-5">
+          <div class="card-image">
+            <img src="{{mob['image']}}">
+            <span class="card-title red darken-4">{{mob['name']}} [CR: {{mob['challenge_rating']}}]</span>
+            <a class="btn btn-floating halfway-fab waves-effect waves-light red modal-trigger"
+              href="#modal{{loop.index}}">
+              <i class="material-icons">call_to_action</i>
+            </a>
           </div>
-        </section>
+          <div class="card-content">
+            <ul>
+              <li>HP: {{mob['hit_points']}}</li>
+              <li>AC: {{mob['armor_class'][0]["value"]}}</li>
+              <li>Size: {{mob['size']}}</li>
+            </ul>
+          </div>
+        </div>
+        <div id="modal{{loop.index}}" class="modal">
+          <div class="modal-content">
+
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+          </div>
+        </div>
       </div>
       {% endfor %}
     </div>

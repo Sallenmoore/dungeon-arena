@@ -19,13 +19,10 @@ def create_app():
     @app.route("/", methods=["GET", "POST"])
     def index():
         log(request.form)
-        if number := request.form.get("number", session.get("number")):
-            session["number"] = number
-            session["monsters"] = opendnd.OpenDnD.get_monsters(int(session["number"]))
-            log(session["monsters"], session["number"])
-            return render_template(
-                "index.html", monsters=session["monsters"], number=session["number"]
-            )
+        if request.form.get("number", session.get("number")):
+            session.update(request.form)
+            # log(session)
+            session["monsters"] = opendnd.OpenDnD.get_monsters(**session)
         return render_template("index.html")
 
     return app

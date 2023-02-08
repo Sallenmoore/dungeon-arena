@@ -1,0 +1,128 @@
+{% macro stateblock() -%}
+<div class="stat-block">
+    <hr class="orange-border" />
+
+    <div class="creature-heading">
+        <h1>{{mob['name']}}</h1>
+        <h2>{{mob['alignment']}}</h2>
+    </div>
+
+    <svg height="5" width="100%" class="tapered-rule">
+        <polyline points="0,0 400,2.5 0,5"></polyline>
+    </svg>
+
+    <div class="row">
+        <div class="col s6">
+            <div class="property-line first">
+                <h4>Armor Class</h4>
+                <p>{{mob['armor_desc']}}</p>
+            </div> <!-- property line -->
+            <div class="property-line">
+                <h4>Hit Points</h4>
+                <p>{{mob['hit_points']}}</p>
+            </div> <!-- property line -->
+            <div class="property-line last">
+                <h4>Speed</h4>
+                <ul>
+                    {% for mode, speed in mob['speed'].items() %}
+                    <li>{{mode}}: {{speed}}</li>
+                    {% endfor %}
+                </ul>
+            </div> <!-- property line -->
+            <svg height="5" width="100%" class="tapered-rule">
+                <polyline points="0,0 400,2.5 0,5"></polyline>
+            </svg>
+            <div class="abilities">
+                <div class="ability-strength">
+                    <h4>STR</h4>
+                    <p>{{mob['strength']}}</p>
+                </div> <!-- ability strength -->
+                <div class="ability-dexterity">
+                    <h4>DEX</h4>
+                    <p>{{mob['dexterity']}}</p>
+                </div> <!-- ability dexterity -->
+                <div class="ability-constitution">
+                    <h4>CON</h4>
+                    <p>{{mob['constitution']}}</p>
+                </div> <!-- ability constitution -->
+                <div class="ability-intelligence">
+                    <h4>INT</h4>
+                    <p>{{mob['intelligence']}}</p>
+                </div> <!-- ability intelligence -->
+                <div class="ability-wisdom">
+                    <h4>WIS</h4>
+                    <p>{{mob['wisdom']}}</p>
+                </div> <!-- ability wisdom -->
+                <div class="ability-charisma">
+                    <h4>CHA</h4>
+                    <p>{{mob['charisma']}}</p>
+                </div> <!-- ability charisma -->
+            </div> <!-- abilities -->
+
+            <svg height="5" width="100%" class="tapered-rule">
+                <polyline points="0,0 400,2.5 0,5"></polyline>
+            </svg>
+
+            <div class="property-line first">
+                <h4>Damage Immunities</h4>
+                <ul>
+                    {% for dv in mob['damage_immunities'] %}
+                    <li>{{dv}}</li>
+                    {% endfor %}
+                </ul>
+            </div> <!-- property line -->
+            <div class="property-line">
+                <h4>Condition Immunities</h4>
+                <ul>
+                    {% for dv in mob['condition_immunities'] %}
+                    <li>{{dv}}</li>
+                    {% endfor %}
+                </ul </div> <!-- property line -->
+                <div class="property-line">
+                    <h4>Senses</h4>
+                    <ul>
+                        {% for k,v in mob['senses'].items() %}
+                        <li>{{k}}:{{v}}</li>
+                        {% endfor %}
+                    </ul>
+                </div> <!-- property line -->
+                <div class="property-line last">
+                    <h4>Experience</h4>
+                    <p>{{mob['xp']}}</p>
+                </div> <!-- property line -->
+            </div> <!-- top stats -->
+        </div> <!-- section left -->
+        <div class="col s6">
+            <div class="actions">
+                {% for sa in mob['actions'] %}
+                <div class="property-block">
+                    <h4>{{sa['name']}}</h4>
+                    <p>{{sa['desc']}}</p>
+                </div>
+                {% endfor %} <!-- property block -->
+            </div> <!-- actions -->
+            <div class="actions">
+                {% for sa in mob['special_abilities'] %}
+                <div class="property-block">
+                    <h4>{{sa['name']}}</h4>
+                    <p>{{sa['desc']}}</p>
+                </div>
+                {% endfor %} <!-- property block -->
+            </div>
+            <div class="actions">
+                <h3>Legendary Actions</h3>
+                <div class="property-block">
+                    <h4>Multiattack.</h4>
+                    <p>The armor makes two melee attacks.</p>
+                </div> <!-- property block -->
+                <div class="property-block">
+                    <h4>Slam.</h4>
+                    <p><i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target.
+                        <i>Hit:</i> 5 (1d6 + 2) bludgeoning damage.
+                    </p>
+                </div> <!-- property block -->
+            </div> <!-- actions -->
+        </div> <!-- section right -->
+        <hr class="orange-border bottom" />
+    </div> <!-- stat block -->
+    {% endmacro -%}

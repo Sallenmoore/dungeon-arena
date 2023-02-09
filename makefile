@@ -1,4 +1,6 @@
 
+.PHONY: all build run clean deepclean test
+
 all: test clean run start
 
 APP_NAME?=dungeon
@@ -9,7 +11,7 @@ build:
 
 run: 
 	docker-compose up --build -d
-	echo "docker logs -t $(APP_NAME) -f"
+	docker logs -f --since=5m -t $(APP_NAME)
 
 ###### CLEANING #######
 

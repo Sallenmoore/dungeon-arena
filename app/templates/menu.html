@@ -1,0 +1,57 @@
+<div id="menu" class="column is-4">
+  <h4 class="center red-text text-darken-4"> The Zen Moose's</h4>
+  <img class="image is-rounded" style="max-height: 3em;" src="static/images/logo{{ range(1, 4) | random }}.png" />
+  <h1>
+    <iconify-icon class="has-text-secondary" icon="mdi:axe-battle"></iconify-icon>
+    Battle Arena
+    <iconify-icon class="has-text-secondary" icon="mdi:axe-battle" flip="horizontal"></iconify-icon>
+  </h1>
+</div>
+<div class="column is-8">
+  <div class="panel">
+    <h5>Encounter Generator</h5>
+    <form class="grid" action="/" method="post">
+      <div class="column is-full">
+        <button class="button" type="submit">
+          <i class="material-icons">replay</i>
+        </button>
+      </div>
+      <div class="column is-full">
+        <div class="is-select">
+          <select id="number" name="number">
+            {% for i in range(1, 11) %}
+            <option value="{{i}}" {% if session['number']==i|string() %} selected {% endif %}>
+              {{i}}
+            </option>
+            {% endfor %}
+          </select>
+          <label>How many opponents?</label>
+        </div>
+      </div>
+      <div class="column is-half">
+        <label>Min CR</label>
+        <div class="is-select">
+          <select id="crmin" name="crmin">
+            {% for i in range(21) %}
+            <option value="{{i}}" {% if session['crmin']==i|string() %} selected {% endif %}>
+              {{i}}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="column is-half">
+        <label>Max CR</label>
+        <div class="is-select">
+          <select id="crmax" name="crmax">
+            {% for i in range(20, 0, -1) %}
+            <option value="{{i}}" {% if session['crmax']==i|string() %} selected {% endif %}>
+              {{i}}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

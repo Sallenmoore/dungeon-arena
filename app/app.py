@@ -2,6 +2,7 @@ import os
 
 from config import DevelopmentConfig
 from flask import Flask, render_template, request, session
+from flask_assets import Bundle, Environment
 from models import Model
 from utils import log, opendnd
 
@@ -12,6 +13,32 @@ def create_app():
     #################################################################
     #                             Extensions                        #
     #################################################################
+    # app.wsgi_app = SassMiddleware(
+    #     app.wsgi_app,
+    #     {
+    #         os.getenv("APP_NAME", __name__): (
+    #             "static/style/sass",
+    #             "static/style",
+    #             "/static/style",
+    #         )
+    #     },
+    # )
+    assets = Environment(app)
+
+    assets.register(
+        "js",
+        Bundle(
+            "js/main.js",
+            "js/base.js",
+            "js/widgets.js",
+            filters="jsmin",
+            output="main.js",
+        ),
+    )
+
+    assets.register(
+        "style", Bundle("sass/*.scss", filters="pyscss,cssmin", output="style.css")
+    )
 
     #################################################################
     #                             ROUTES                            #

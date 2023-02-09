@@ -2,40 +2,38 @@
 {% import "macros/statblock.html" as statblock %}
 
 {% block content %}
-<div class="row">
-  <div class="col s12">
-    <div class="row">
-      {% for mob in session['monsters'] %}
-      <div class="col s3">
-        <div class="card amber lighten-5">
-          <div class="card-image">
-            <img src="{{mob['image']}}">
-            <span class="card-title red darken-4" style="width:70%;font-size:1rem;">
-              {{mob['name']}} (CR:{{mob['challenge_rating']}})
-            </span>
-            <a class="btn btn-floating halfway-fab waves-effect waves-light red modal-trigger"
-              href="#modal{{loop.index}}">
-              <i class="material-icons">credit_card</i>
-            </a>
-          </div>
-          <div class="card-content">
-            <ul>
-              <li>HP: {{mob['hit_points']}}</li>
-              <li>AC: {{mob['armor_class'][0]["value"]}}</li>
-              <li>Size: {{mob['size']}}</li>
-            </ul>
-          </div>
+<div id="hero" class="hero__content has-bg-light has-no-padding">
+  <div class="grid">
+    {% for mob in session['monsters'] %}
+    <div class="column is-shrink has-spacing is-center">
+      <div class="card has-bg-primary">
+        <div class="card__image">
+          <img class="image is-large-square" src="{{mob['image']}}">
+          <span class="card-title has-bg-secondary">
+            {{mob['name']}} (CR:{{mob['challenge_rating']}})
+          </span>
+          <a class="button is-rounded is-primary modal-trigger" href="#modal{{loop.index}}">
+            <iconify-icon icon="material-symbols:data-info-alert-rounded"
+              style="color: #ba3329; font-size: 48px"></iconify-icon>
+          </a>
         </div>
-        <div id="modal{{loop.index}}" class="modal">
-          <div class="stat-block modal-content">
-            <hr class="orange-border" />
-            {{ statblock.statblock(mob) }}
-            <hr class="orange-border" />
-          </div>
+        <div class="card__content">
+          <ul>
+            <li>HP: {{mob['hit_points']}}</li>
+            <li>AC: {{mob['armor_class'][0]["value"]}}</li>
+            <li>Size: {{mob['size']}}</li>
+          </ul>
         </div>
       </div>
-      {% endfor %}
+      {# <div id="modal{{loop.index}}" class="modal">
+        <div class="stat-block modal__content">
+          <hr class="orange-border" />
+          {{ statblock.statblock(mob) }}
+          <hr class="orange-border" />
+        </div>
+      </div> #}
     </div>
+    {% endfor %}
   </div>
 </div>
 {% endblock %}

@@ -1,8 +1,13 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Open+Sans&display=swap');
-
+@import 'fonts';
 @import 'variables';
+ 
 @import url(https://cdn.jsdelivr.net/npm/orbitcss/css/orbit.css);
+
+#menu{
+    font-family: 'Metal Mania', cursive;
+    font-size: 5rem;
+}
 
 // html{
 //     font-family: 'Open Sans', sans-serif;
@@ -32,10 +37,7 @@
 //     opacity: 0.5;
 // }
 
-// #nav{
-//     font-family: 'Metal Mania', cursive;
-//     font-size: 5rem;
-// }
+
 
 // .stat-block {
 //     margin: 0;

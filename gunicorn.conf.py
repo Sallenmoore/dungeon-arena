@@ -21,7 +21,7 @@ loglevel = os.environ.get("LOG_LEVEL", "INFO").upper()
 timeout = 120
 workers = 2
 # Whether to send output to the error log
-capture_output = True
+capture_output = False
 # How verbose the Gunicorn error logs should be
 
 reload = True

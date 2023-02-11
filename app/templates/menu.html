@@ -1,6 +1,10 @@
-<div id="menu" class="column is-4">
-  <h4 class="center red-text text-darken-4"> The Zen Moose's</h4>
-  <img class="image is-rounded" style="max-height: 3em;" src="static/images/logo{{ range(1, 4) | random }}.png" />
+<div id="menu" class="column is-4 has-text-center">
+  <h4> The Zen Moose's</h4>
+  <div class="grid has-centered">
+    <div class="column  is-shrink">
+      <img class="image is-large-square is-rounded" src="static/images/logo{{ range(1, 4) | random }}.png" />
+    </div>
+  </div>
   <h1>
     <iconify-icon class="has-text-secondary" icon="mdi:axe-battle"></iconify-icon>
     Battle Arena
@@ -13,7 +17,7 @@
     <form class="grid" action="/" method="post">
       <div class="column is-full">
         <button class="button" type="submit">
-          <i class="material-icons">replay</i>
+          <iconify-icon icon="game-icons:battle-gear" width="50px"></iconify-icon>
         </button>
       </div>
       <div class="column is-full">

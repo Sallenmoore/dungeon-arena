@@ -1,8 +1,8 @@
 
 ///////////////// COLORS //////////////////
 
-$primary: #240B36;
-$secondary: #922610;
+$primary: #c4c5c9;
+$secondary: #7b0101;
 // $warning: #ffdd57 !default;
 // $info: #bfd9fe !default;
 // $danger: #ff2b56 !default;
@@ -27,14 +27,13 @@ $lowlight: #9FA4A9;
 
 //////////////////// FONT ////////////////////
 /// 
-// $font-base: 1.2rem;
-// $font-base: 16 !default;
+$font-base: 1.2rem;
 
 // $theme-font-color: createColor($black) !default;
 // $theme-background-color: createColor($white) !default;
 
-// $body-font-family: 'Roboto', sans-serif !default;
-// $body-font-size: calculateRem(16) !default;
+$body-font-family: 'Open Sans', sans-serif;
+// $body-font-size: 1.2rem;
 // $body-font-weight: 400 !default;
 // $body-line-height: 1.6 !default;
 

@@ -1,41 +1,16 @@
 
 @import 'fonts';
 @import 'variables';
- 
-@import url(https://cdn.jsdelivr.net/npm/orbitcss/css/orbit.css);
+
+@import 'orbitcss/orbit'; //needs to come after
 
 #menu{
-    font-family: 'Metal Mania', cursive;
-    font-size: 5rem;
+
+     h1,h2,h3,h4,h5,h6{
+        font-family: 'Metal Mania', cursive;
+        font-size: 5rem;
+     }
 }
-
-// html{
-//     font-family: 'Open Sans', sans-serif;
-//     font-size: 16px;
-//     color: #333;
-//     background-color: #f5f5f5;
-// }
-
-// body{
-//     height: 100%;
-//     width: 100%;
-//     background-image: url('../images/bg.jpg');
-//     background-size: cover;
-//     background-attachment:scroll;
-//     background-color: #f5f5f5;
-// }
-
-// #background{
-//     height: 100%;
-//     width: 100%;
-//     min-height: 100vh;
-//     min-width: 100vw;
-//     background-color: rgba(175, 175, 175, 0.5);
-// }
-
-// #background::before{
-//     opacity: 0.5;
-// }
 
 
 

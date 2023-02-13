@@ -1,4 +1,5 @@
 import os
+import subprocess
 
 from config import DevelopmentConfig
 from flask import Flask, render_template, request, session
@@ -40,9 +41,9 @@ def create_app():
         ),
     )
 
-    assets.register(
-        "style", Bundle("sass/*.scss", filters="pyscss,cssmin", output="style.css")
-    )
+    path = "static/sass/main.scss"
+    output = "static/style.css"
+    subprocess.call(["sass", f"{path}:{output}"])
 
     #################################################################
     #                             ROUTES                            #

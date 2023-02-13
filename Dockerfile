@@ -3,8 +3,9 @@ FROM python:3.10
 RUN apt-get update
 RUN apt-get install --no-install-recommends -y build-essential curl git nodejs npm
 
-WORKDIR /var/app/static
-RUN npm init -y && npm install sass orbitcss
+# Install the vendor applications
+COPY ./vendor/dart-sass /var/dart-sass
+ENV PATH="/var/dart-sass:${PATH}"
 
 # install dependencies
 RUN pip install --no-cache-dir --upgrade pip wheel

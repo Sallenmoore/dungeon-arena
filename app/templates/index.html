@@ -2,11 +2,11 @@
 {% import "macros/statblock.html" as statblock %}
 
 {% block content %}
-<div id="hero" class="hero__content has-bg-light has-no-padding">
+<div id="hero" class="hero__content">
   <div class="grid">
     {% for mob in session['monsters'] %}
     <div class="column is-shrink has-spacing is-center">
-      <div class="card has-bg-primary">
+      <div class="card has-bg-light">
         <div class="card__image">
           <img class="image is-large-square" src="{{mob['image']}}">
           <span class="card-title has-bg-secondary">

@@ -12,7 +12,6 @@ services:
       - app_net
     volumes:
       - ./app:/var/app/
-      - ./app/static/node_modules:/var/app/static
     command: ["gunicorn", "app:create_app()", "-c/var/gunicorn.conf.py"]
     ports:
      - "5000:5000"

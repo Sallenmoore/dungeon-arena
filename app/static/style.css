@@ -1,1 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Open+Sans&display=swap');@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Open+Sans&display=swap');@import url(https://cdn.jsdelivr.net/npm/orbitcss/css/orbit.css);#menu{font-family:'Metal Mania',cursive;font-size:5rem}
+/* Error: 13.3333333333rem^-1 isn't a valid CSS value.
+ *   ,
+ * 4 |   @return (math.div($size, $font-base))+rem;
+ *   |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   static/sass/orbitcss/scss/base/_functions.scss 4:11  calculateRem()
+ *   static/sass/orbitcss/scss/base/_general.scss 13:18   @import
+ *   static/sass/orbitcss/scss/base/_all.scss 3:9         @import
+ *   static/sass/orbitcss/scss/main.scss 3:9              @import
+ *   static/sass/orbitcss/orbit.scss 1:9                  @import
+ *   static/sass/main.scss 5:9                            root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: 13.3333333333rem^-1 isn't a valid CSS value.\a   \2577 \a 4 \2502    @return (math.div($size, $font-base))+rem;\a   \2502            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   static/sass/orbitcss/scss/base/_functions.scss 4:11  calculateRem()\a   static/sass/orbitcss/scss/base/_general.scss 13:18   @import\a   static/sass/orbitcss/scss/base/_all.scss 3:9         @import\a   static/sass/orbitcss/scss/main.scss 3:9              @import\a   static/sass/orbitcss/orbit.scss 1:9                  @import\a   static/sass/main.scss 5:9                            root stylesheet";
+}

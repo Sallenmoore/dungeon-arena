@@ -2,7 +2,6 @@
 
 firebase.json
 
-
 app/static/.webassets-cache/*
 
 # Byte-compiled / optimized / DLL files
@@ -70,18 +69,3 @@ ENV/
 env.bak/
 venv.bak/
 .env
-app/static/.webassets-cache/5b8895ac361bcf2d0a531e8ce803a86f
-app/static/.webassets-cache/5d61e812b7e602626d7c4849ece14cb3
-app/static/.webassets-cache/7d8a1d31b0d047949150467fc843bbf8
-app/static/.webassets-cache/9a336f8244cc02f3bfab0efaa7d17a04
-app/static/.webassets-cache/48fbff1d2e0845d877901838eef2ecdf
-app/static/.webassets-cache/74b0b0768c6f24e87ff20450182470b1
-app/static/.webassets-cache/491b79f1c157c0a22c20c6931cd4ff7c
-app/static/.webassets-cache/4262e19c3777eb249b64788ac8dfaf55
-app/static/.webassets-cache/96821eaf4019ccbfd0d9a3400d151a50
-app/static/.webassets-cache/bb83025fe1d1a578291586cbe4426ff4
-app/static/.webassets-cache/dc991116c9e80c44e34fe474a1738737
-app/static/.webassets-cache/f5eda424df36b5a7e3c0669b2c360565
-app/static/.webassets-cache/4cad883e97fc1f7124136a80c05035e8
-app/static/.webassets-cache/71bb06630908db65d4d48efe00f47253
-app/static/.webassets-cache/4584b46e3125d596d9a6145489000ae9

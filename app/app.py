@@ -6,7 +6,7 @@ from flask import Flask, render_template, request, session
 from flask_assets import Bundle, Environment
 
 # from models import Model
-from utils import log, opendnd
+from utils import log, opendnd, sassfilter
 
 # from webassets.filter import register_filter
 # from webassets.filter.sass import DartSass
@@ -41,9 +41,15 @@ def create_app():
         ),
     )
 
-    path = "static/sass/main.scss"
-    output = "static/style.css"
-    subprocess.call(["sass", f"{path}:{output}"])
+    # assets.register(
+    #     "dartscss",
+    #     Bundle(
+    #         "sass/main.scss",
+    #         filters=(sassfilter.dartsass),  # ("dartsass",),
+    #         output="style.css",
+    #     ),
+    # )
+    app.before_first_request(lambda: sassfilter.dartsass())
 
     #################################################################
     #                             ROUTES                            #
@@ -55,6 +61,7 @@ def create_app():
             session.update(request.form)
             # log(session)
             session["monsters"] = opendnd.OpenDnD.get_monsters(**session)
+            log(request.form)
         return render_template("index.html")
 
     return app

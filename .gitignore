@@ -3,7 +3,7 @@
 firebase.json
 
 
-static/.webassets-cache/
+app/static/.webassets-cache/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -82,3 +82,6 @@ app/static/.webassets-cache/96821eaf4019ccbfd0d9a3400d151a50
 app/static/.webassets-cache/bb83025fe1d1a578291586cbe4426ff4
 app/static/.webassets-cache/dc991116c9e80c44e34fe474a1738737
 app/static/.webassets-cache/f5eda424df36b5a7e3c0669b2c360565
+app/static/.webassets-cache/4cad883e97fc1f7124136a80c05035e8
+app/static/.webassets-cache/71bb06630908db65d4d48efe00f47253
+app/static/.webassets-cache/4584b46e3125d596d9a6145489000ae9

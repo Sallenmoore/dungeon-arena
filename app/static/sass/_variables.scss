@@ -1,8 +1,10 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Open+Sans&display=swap');
+
 ///////////////// COLORS //////////////////
 
-$primary: #c4c5c9;
-$secondary: #7b0101;
+$primary: #dddddd;
+$secondary: hsla(358, 96%, 39%, 1.0);
 // $warning: #ffdd57 !default;
 // $info: #bfd9fe !default;
 // $danger: #ff2b56 !default;
@@ -25,9 +27,13 @@ $custom-palette : (
 $highlight: #C2D3CD;
 $lowlight: #9FA4A9;
 
+//////////////////// HERO ////////////////////
+$hero-padding: 0;
+$hero-background-color:lighten($primary, 25%);
+$hero-color: $secondary;
 //////////////////// FONT ////////////////////
 /// 
-$font-base: 1.2rem;
+$font-base: 14;
 
 // $theme-font-color: createColor($black) !default;
 // $theme-background-color: createColor($white) !default;
@@ -37,16 +43,26 @@ $body-font-family: 'Open Sans', sans-serif;
 // $body-font-weight: 400 !default;
 // $body-line-height: 1.6 !default;
 
+//////////////////// HR ////////////////////
+// $hr-color: var(--color-light-grey-lighter) !default;
+// $hr-height: calculateRem(2) !default;
+// $hr-margin: calculateRem(20) 0 !default;
+
+//////////////////// BUTTON ////////////////////
+$button-background: $primary;
+$button-color: $secondary;
+$button-radius: 0.5rem;
+$button-font-size: 1.2rem;
+$button-hover-background:darken($primary, 10%);
+
+/////////////////////// CARD ////////////////////
+$card-header-background: $secondary;
+$card-header-color: $primary;
+$card-shadow:0 0 3px 0 hsla(0, 0%, 4%, 0.217);
+
 //////////////////// MEDIA ////////////////////
 
 // $small-max: 767px !default;
 // $medium: 768px !default;
 // $large: 922px !default;
 // $x-large: 1200px !default;
-
-//////////////////// HR ////////////////////
-// $hr-color: var(--color-light-grey-lighter) !default;
-// $hr-height: calculateRem(2) !default;
-// $hr-margin: calculateRem(20) 0 !default;
-
-$theme-background-color: $highlight;

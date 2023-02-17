@@ -16,7 +16,6 @@ function createIcon(name) {
 //===My document.ready() handler...
 document.addEventListener("DOMContentLoaded", () => {
   //=== do some code stuff...
-  M.AutoInit();
   bindEvents();
 });
 

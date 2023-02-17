@@ -4,18 +4,30 @@
 {% block content %}
 <div id="hero" class="hero__content">
   <div class="grid">
+    <div id="menu" class="column has-bg-secondary has-text-primary is-shrink has-text-center">
+      <h4> The Zen Moose's</h4>
+      <div class="grid has-centered">
+        <div class="column  is-shrink">
+          <img class="image is-large-square is-rounded" src="static/images/logo{{ range(1, 4) | random }}.png" />
+        </div>
+      </div>
+      <h1>
+        <iconify-icon class="has-text-secondary" icon="mdi:axe-battle"></iconify-icon>
+        Battle Arena
+        <iconify-icon class="has-text-secondary" icon="mdi:axe-battle" flip="horizontal"></iconify-icon>
+      </h1>
+    </div>
     {% for mob in session['monsters'] %}
     <div class="column is-shrink has-spacing is-center">
       <div class="card has-bg-light">
+        <div class="card__header has-bg-secondary">
+          <a class="button circle modal-trigger" href="#modal{{loop.index}}">
+            <iconify-icon icon="material-symbols:data-info-alert-rounded"></iconify-icon>
+          </a>
+          {{mob['name']}} (CR:{{mob['challenge_rating']}})
+        </div>
         <div class="card__image">
           <img class="image is-large-square" src="{{mob['image']}}">
-          <span class="card-title has-bg-secondary">
-            {{mob['name']}} (CR:{{mob['challenge_rating']}})
-          </span>
-          <a class="button is-rounded is-primary modal-trigger" href="#modal{{loop.index}}">
-            <iconify-icon icon="material-symbols:data-info-alert-rounded"
-              style="color: #ba3329; font-size: 48px"></iconify-icon>
-          </a>
         </div>
         <div class="card__content">
           <ul>

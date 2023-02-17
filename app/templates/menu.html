@@ -1,26 +1,14 @@
-<div id="menu" class="column is-4 has-text-center">
-  <h4> The Zen Moose's</h4>
-  <div class="grid has-centered">
-    <div class="column  is-shrink">
-      <img class="image is-large-square is-rounded" src="static/images/logo{{ range(1, 4) | random }}.png" />
-    </div>
-  </div>
-  <h1>
-    <iconify-icon class="has-text-secondary" icon="mdi:axe-battle"></iconify-icon>
-    Battle Arena
-    <iconify-icon class="has-text-secondary" icon="mdi:axe-battle" flip="horizontal"></iconify-icon>
-  </h1>
-</div>
-<div class="column is-8">
+<div class="column is-full">
   <div class="panel">
-    <h5>Encounter Generator</h5>
     <form class="grid" action="/" method="post">
-      <div class="column is-full">
+      <div class="column is-4">
         <button class="button" type="submit">
           <iconify-icon icon="game-icons:battle-gear" width="50px"></iconify-icon>
         </button>
+        <h4>Encounter Generator</h4>
       </div>
-      <div class="column is-full">
+      <div class="column is-3">
+        <label>How many opponents?</label>
         <div class="is-select">
           <select id="number" name="number">
             {% for i in range(1, 11) %}
@@ -29,10 +17,9 @@
             </option>
             {% endfor %}
           </select>
-          <label>How many opponents?</label>
         </div>
       </div>
-      <div class="column is-half">
+      <div class="column is-2">
         <label>Min CR</label>
         <div class="is-select">
           <select id="crmin" name="crmin">
@@ -44,7 +31,7 @@
           </select>
         </div>
       </div>
-      <div class="column is-half">
+      <div class="column is-2">
         <label>Max CR</label>
         <div class="is-select">
           <select id="crmax" name="crmax">

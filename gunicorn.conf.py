@@ -1,4 +1,5 @@
 import os
+from glob import glob
 
 # Non logging stuff
 bind = f"{os.environ.get('HOST', '0.0.0.0')}:{os.environ.get('PORT', 5000)}"
@@ -25,4 +26,5 @@ capture_output = False
 # How verbose the Gunicorn error logs should be
 
 reload = True
-reload_extra_files = ["templates/", "static/"]
+
+reload_extra_files = ["templates/"] + glob("static/**/*", recursive=True)

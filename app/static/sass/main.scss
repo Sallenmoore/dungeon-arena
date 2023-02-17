@@ -1,15 +1,17 @@
 
-@import 'fonts';
 @import 'variables';
 
 @import 'orbitcss/orbit'; //needs to come after
 
+@import 'buttons';
+
 #menu{
 
-     h1,h2,h3,h4,h5,h6{
+     & h1, h2, h3, h4,h5, h6{
         font-family: 'Metal Mania', cursive;
-        font-size: 5rem;
+        color: darken($primary, 20%);
      }
+
 }
 
 
